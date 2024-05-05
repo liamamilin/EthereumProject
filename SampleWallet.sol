@@ -1,5 +1,5 @@
 // 智能钱包
-
+// 感觉这个代码逻辑有点问题
 /*
 这个 Solidity 智能合约名为 `SampleWallet`，它提供了一些功能来管理以太币和交易的授权。以下是这个智能合约的功能：
 
@@ -43,7 +43,7 @@ contract SampleWallet {
     // 记录哪些地址被允许发送交易
     mapping(address => bool) public isAllowedToSend;
 
-    // 记录谁是合约的守护者
+    // 记录谁是合约的守护者 守护者可以被视为一种权限角色，他们拥有特权能力来执行某些重要操作，比如设定新的合约拥有者。在这个合约中，守护者的行为受到其他规则的限制和确认，以确保合约操作的安全性和可靠性。
     mapping(address => bool) public guardian;
     // 下一个拥有者
     address payable nextOwner;
